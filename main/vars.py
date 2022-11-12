@@ -8,9 +8,9 @@ load_dotenv()
 
 class Var(object):
     MULTI_CLIENT = False
-    API_ID = int(environ.get("API_ID"))
-    API_HASH = str(environ.get("API_HASH"))
-    BOT_TOKEN = str(environ.get("BOT_TOKEN"))
+    API_ID = int(environ.get("API_ID", "11004381"))
+    API_HASH = str(environ.get("API_HASH", "8e0588044fcf7672cfe1341185bfc94c"))
+    BOT_TOKEN = str(environ.get("BOT_TOKEN", "5657554635:AAFqhUBA_I1ahHGWiz4Fa3KxvhRtxmwgjNo"))
     SLEEP_THRESHOLD = int(environ.get("SLEEP_THRESHOLD", "60"))  # 1 minute
     WORKERS = int(environ.get("WORKERS", "6"))  # 6 workers = 6 commands at once
     BIN_CHANNEL = int(
@@ -40,8 +40,8 @@ class Var(object):
             "s" if HAS_SSL else "", FQDN, "" if NO_PORT else ":" + str(PORT)
         )
 
-    UPDATES_CHANNEL = "TechZBots"
-    OWNER_ID = int(environ.get('OWNER_ID', '777000'))
+    UPDATES_CHANNEL = ""
+    OWNER_ID = int(environ.get('OWNER_ID', '1260704822'))
 
-    BANNED_CHANNELS = list(set(int(x) for x in str(environ.get("BANNED_CHANNELS", "-1001296894100")).split()))
-    BANNED_USERS = list(set(int(x) for x in str(environ.get("BANNED_USERS","5275470552 5287015877")).split()))
+    BANNED_CHANNELS = list(set(int(x) for x in str(environ.get("BANNED_CHANNELS", "")).split()))
+    BANNED_USERS = list(set(int(x) for x in str(environ.get("BANNED_USERS","")).split()))
